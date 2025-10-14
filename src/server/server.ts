@@ -1,4 +1,5 @@
 import Hapi from '@hapi/hapi';
+import { routes } from '../routes';
 
 const init = async () => {
   const server = Hapi.server({
@@ -6,15 +7,7 @@ const init = async () => {
     host: 'localhost'
   });
 
-   server.route({
-        method: 'GET',
-        path: '/',
-        handler: (request, h) => {
-
-            return 'Hello World!';
-        }
-    });
-
+  server.route(routes as any);
 
   await server.start();
   console.log('Server running on %s', server.info.uri);
