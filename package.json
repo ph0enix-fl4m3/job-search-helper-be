@@ -1,0 +1,25 @@
+{
+  "name": "jobhunter",
+  "version": "1.0.0",
+  "description": "An AI powered job hunting app",
+  "keywords": [
+    "AI",
+    "job",
+    "linkedin"
+  ],
+  "license": "MIT",
+  "author": "Nikola Tasic",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
