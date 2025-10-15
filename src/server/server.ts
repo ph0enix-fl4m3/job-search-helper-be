@@ -7,7 +7,7 @@ const init = async () => {
     host: 'localhost'
   });
 
-  server.route(routes as any);
+  server.route(routes);
 
   await server.start();
   console.log('Server running on %s', server.info.uri);
