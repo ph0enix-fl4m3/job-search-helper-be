@@ -30,7 +30,7 @@ class FirebaseController extends DatabaseController {
     }
   }
 
-  public async getDocumentById(
+  public async getDocumentFromCollectionById(
     collectionName: string,
     docId: string
   ): Promise<any | null> {
@@ -45,6 +45,20 @@ class FirebaseController extends DatabaseController {
       }
     } catch (error) {
       console.error("Error getting document by ID:", error);
+      throw error;
+    }
+  }
+
+  public async postDocumentToCollection(
+    collectionName: string,
+    document: object
+  ) {
+    try {
+      const collection = this.db.collection(collectionName);
+      const doc = await collection.add(document);
+      return doc;
+    } catch (error) {
+      console.error("Error getting pushing document:", error);
       throw error;
     }
   }

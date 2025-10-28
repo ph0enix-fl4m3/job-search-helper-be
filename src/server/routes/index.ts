@@ -31,16 +31,4 @@ export const routes: Hapi.ServerRoute[] = [
       return "Hello test 2!";
     },
   },
-  {
-    method: "GET",
-    path: "/test-database",
-    handler: async (request, h) => {
-      console.log("I am here");
-      const collectionName = "job_offerings";
-      const databaseController = new FirebaseController();
-      const data = await databaseController.getCollectionData(collectionName);
-      console.log(data);
-      return data;
-    },
-  },
 ];
