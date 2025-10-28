@@ -15,7 +15,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@hapi/hapi": "^21.4.3"
+    "@hapi/hapi": "^21.4.3",
+    "firebase-admin": "^13.5.0"
   },
   "devDependencies": {
     "@types/node": "^24.7.2",
