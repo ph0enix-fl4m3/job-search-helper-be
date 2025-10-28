@@ -1,20 +1,20 @@
-import Hapi from '@hapi/hapi';
-import { routes } from '../routes';
+import "../config/loadEnv"; // loads dotenv early
+import Hapi from "@hapi/hapi";
+import { routes } from "./routes";
 
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
-    host: 'localhost'
+    host: "localhost",
   });
 
   server.route(routes);
 
   await server.start();
-  console.log('Server running on %s', server.info.uri);
-
+  console.log("Server running on %s", server.info.uri);
 };
 
-process.on('unhandledRejection', (err) => {
+process.on("unhandledRejection", (err) => {
   console.log(err);
   process.exit(1);
 });
